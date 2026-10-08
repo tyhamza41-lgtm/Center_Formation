@@ -1,70 +1,184 @@
-# Getting Started with Create React App
+# 🎓 Institut Horizon Formation — Application Web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![React](https://img.shields.io/badge/React-19.3.0-61DAFB?logo=react&logoColor=black&style=for-the-badge)](https://react.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![CSS3](https://img.shields.io/badge/CSS3-Modular_%26_Responsive-1572B6?logo=css3&logoColor=white&style=for-the-badge)](https://www.w3.org/Style/CSS/)
+[![License](https://img.shields.io/badge/License-Propriétaire-blue?style=for-the-badge)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-En_Production-success?style=for-the-badge)](#)
 
-## Available Scripts
+> **Portail officiel et vitrine institutionnelle de l'Institut Horizon Formation**, établissement d'enseignement supérieur et de perfectionnement professionnel dédié aux métiers du numérique, de l'intelligence artificielle, des systèmes et du design.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📑 Table des Matières
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [À Propos du Projet](#-à-propos-du-projet)
+- [Fonctionnalités Principales](#-fonctionnalités-principales)
+- [Architecture & Structure du Code](#-architecture--structure-du-code)
+- [Technologies & Outils](#-technologies--outils)
+- [Prérequis](#-prérequis)
+- [Installation & Démarrage](#-installation--démarrage)
+- [Scripts Disponibles](#-scripts-disponibles)
+- [Gestion des Données (Scalabilité)](#-gestion-des-données-scalabilité)
+- [Bonnes Pratiques & Qualité](#-bonnes-pratiques--qualité)
+- [Auteurs & Droits](#-auteurs--droits)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🌟 À Propos du Projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Cette application React présente l'écosystème complet de l'**Institut Horizon Formation** : ses parcours diplômants (titres RNCP), son corps professoral composé d'experts du secteur, ses promotions d'étudiants, ses indicateurs de réussite, ainsi qu'un point de contact interactif pour les admissions.
 
-### `npm run build`
+L'objectif de l'application est d'offrir une expérience utilisateur fluide, élégante et entièrement responsive, tout en conservant une base de code hautement maintenable et découplée.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Fonctionnalités Principales
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Section | Description | Composant Principal |
+| :--- | :--- | :--- |
+| **En-tête & Marque** | Présentation de l'établissement et devise officielle | `Header` |
+| **Navigation Fluide** | Barre de navigation sticky avec ancres et défilement fluide | `Navbar` |
+| **Section Accueil** | Hero section avec proposition de valeur et call-to-action | `Accueil` |
+| **À Propos** | Vision pédagogique, valeurs fondamentales et domaines d'expertise | `APropos` |
+| **Offre de Formation** | Catalogue des filières certifiantes avec fiches détaillées (RNCP, durée, badges) | `Formations` & `FormationCard` |
+| **Corps Professoral** | Présentation des formateurs experts et de leurs spécialisations | `Formateurs` & `FormateurCard` |
+| **Témoignages & Étudiants** | Mise en valeur des apprenants et de leur parcours | `Etudiants` & `EtudiantCard` |
+| **Indicateurs Clés** | Données chiffrées (insertion professionnelle, taux de réussite, etc.) | `Statistiques` & `StatCard` |
+| **Admissions & Contact** | Coordonnées officielles, accès métros et formulaire interactif | `Contact` |
+| **Pied de page** | Navigation secondaire, mentions légales et droits réservés | `Footer` |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏗️ Architecture & Structure du Code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Le projet adopte une architecture modulaire basée sur la séparation des responsabilités :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```text
+mon-app/
+├── public/                     # Fichiers statiques publics (HTML, favicons, robots.txt)
+├── src/
+│   ├── components/             # Composants d'interface modulaires
+│   │   ├── Accueil/            # Section hero et message de bienvenue
+│   │   ├── APropos/            # Section présentation et valeurs
+│   │   ├── Contact/            # Formulaire et coordonnées d'accès
+│   │   ├── Etudiants/          # Cartes et liste des étudiants/alumni
+│   │   ├── Footer/             # Pied de page institutionnel
+│   │   ├── Formateurs/         # Fiches profils des intervenants
+│   │   ├── Formations/         # Catalogue et cartes des filières
+│   │   ├── Header/             # Bandeau supérieur et identité
+│   │   ├── Navbar/             # Navigation principale
+│   │   └── Statistiques/       # Indicateurs de performance
+│   │
+│   ├── data/
+│   │   └── centerData.js       # Source unique de vérité (données centralisées)
+│   │
+│   ├── App.css                 # Styles globaux du conteneur
+│   ├── App.js                  # Composant racine orchestrant les sections
+│   ├── index.css               # Reset CSS et typographies de base
+│   └── index.js                # Point d'entrée React 19 (createRoot)
+│
+├── package.json                # Dépendances et scripts de l'application
+└── README.md                   # Documentation du projet
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🛠️ Technologies & Outils
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Front-end Library** : [React 19](https://react.dev/)
+- **Architecture de Styles** : CSS3 moderne (Variables CSS, Flexbox, CSS Grid, Media Queries)
+- **Tooling & Build** : `react-scripts` 5.0.1 (Webpack, Babel)
+- **Environnement d'exécution** : Node.js (version 18+ recommandée)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📋 Prérequis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Avant de commencer, assurez-vous d'avoir installé sur votre machine :
 
-### Analyzing the Bundle Size
+- **Node.js** : `>= 18.0.0` ([Télécharger Node.js](https://nodejs.org/))
+- **npm** (inclus avec Node.js) ou **yarn** / **pnpm**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Vérifiez vos versions avec :
+```bash
+node -v
+npm -v
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚡ Installation & Démarrage
 
-### Advanced Configuration
+### 1. Cloner le dépôt
+```bash
+git clone https://github.com/votre-compte/mon-app.git
+cd mon-app
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### 2. Installer les dépendances
+```bash
+npm install
+```
 
-### Deployment
+### 3. Démarrer le serveur de développement
+```bash
+npm start
+```
+L'application sera accessible sur [http://localhost:3000](http://localhost:3000). Le rechargement à chaud (Hot Reload) est activé par défaut.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📜 Scripts Disponibles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dans le dossier du projet, vous pouvez exécuter les commandes suivantes :
+
+| Commande | Action |
+| :--- | :--- |
+| `npm start` ou `npm run dev` | Lance l'application en mode développement local |
+| `npm run build` | Compile et minifie l'application pour la production dans le dossier `build/` |
+| `npm test` | Exécute les tests unitaires avec Jest et React Testing Library |
+| `npm run eject` | *Action irréversible.* Éjecte la configuration Create React App |
+
+---
+
+## 📊 Gestion des Données (Scalabilité)
+
+Toutes les informations métier du centre de formation sont découplées des composants d'affichage et centralisées dans le fichier :
+
+```text
+src/data/centerData.js
+```
+
+Pour mettre à jour les cursus, ajouter un formateur, modifier les coordonnées ou adapter les statistiques, il suffit d'éditer ce fichier sans toucher aux composants JSX :
+
+```javascript
+// Exemple d'ajout d'une formation dans centerData.js
+export const formationsData = [
+  // ...
+  {
+    id: 5,
+    nom: "DevOps & Cloud Architecture",
+    description: "Automatisation CI/CD, conteneurisation Docker/Kubernetes et infrastructures AWS.",
+    duree: "6 mois (800 h)",
+    niveau: "Titre RNCP niveau 7 (Bac +5)",
+    badge: "Haute employabilité"
+  }
+];
+```
+
+---
+
+## 💎 Bonnes Pratiques & Qualité
+
+- **Composants atomiques et réutilisables** : Séparation nette entre conteneurs de section et composants de carte (`FormationCard`, `FormateurCard`, `StatCard`, etc.).
+- **Design Adaptatif (Responsive)** : Adapté aux écrans mobiles, tablettes et moniteurs haute définition.
+- **Accessibilité (a11y)** : Balisage HTML sémantique (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`), contrastes étudiés et attributs ARIA.
+- **Performances** : Pas de bibliothèques superflues, empreinte mémoire minimale et temps de chargement optimisé.
+
+---
+
+## 👥 Auteurs & Droits
+
+Développé pour l'**Institut Horizon Formation**.  
+© 2026 Institut Horizon Formation — Établissement privé d'enseignement technique supérieur. Tous droits réservés.
