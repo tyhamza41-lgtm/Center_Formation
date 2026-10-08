@@ -181,4 +181,4 @@ export const formationsData = [
 ## 👥 Auteurs & Droits
 
 Développé pour l'**Institut Horizon Formation**.  
-© 2026 Institut Horizon Formation — Établissement privé d'enseignement technique supérieur. Tous droits réservés.
+© 2026 Hamza Tyamani. Tous droits réservés.
