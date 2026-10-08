@@ -1,0 +1,89 @@
+.statistiques-section {
+  padding: 4rem 1.5rem;
+  background-color: #1e3a8a;
+  color: #ffffff;
+  border-bottom: 1px solid #1e40af;
+}
+
+.statistiques-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-tag-light {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #bfdbfe;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.statistiques-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.4px;
+}
+
+.statistiques-subtitle {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.statistiques-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 2rem 1.25rem;
+  text-align: center;
+  transition: background-color 0.15s ease;
+}
+
+.stat-card:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.stat-valeur {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-feature-settings: "tnum";
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 0.35rem;
+}
+
+.stat-desc {
+  font-size: 0.78rem;
+  color: #93c5fd;
+}
+
+@media (max-width: 900px) {
+  .statistiques-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .statistiques-grid {
+    grid-template-columns: 1fr;
+  }
+}

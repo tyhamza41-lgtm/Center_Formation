@@ -1,0 +1,193 @@
+.accueil-section {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+}
+
+.accueil-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.accueil-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.accueil-kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  border-left: 3px solid #1e3a8a;
+  padding-left: 0.5rem;
+}
+
+.accueil-headline {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.accueil-lead {
+  font-size: 1.15rem;
+  color: #1e3a8a;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.accueil-body {
+  font-size: 0.98rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0 0 1.75rem 0;
+}
+
+.accueil-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  border: 1px solid #1e3a8a;
+}
+
+.btn-primary:hover {
+  background-color: #172554;
+  border-color: #172554;
+}
+
+.btn-outline {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-outline:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Encart d'admission latéral */
+.institution-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.institution-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.institution-card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #16a34a;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+.institution-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.institution-info-list strong {
+  color: #0f172a;
+}
+
+.institution-card-footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 0.85rem;
+}
+
+.link-arrow {
+  color: #1e3a8a;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link-arrow:hover {
+  text-decoration: underline;
+}
+
+/* Barre de réassurance */
+.reassurance-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.reassurance-bullet {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .accueil-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .accueil-headline {
+    font-size: 1.85rem;
+  }
+}
